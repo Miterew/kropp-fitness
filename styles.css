@@ -197,6 +197,8 @@ svg * {
     --transition-duration: 0.2s;
 
     --header-height: 90px;
+
+
 }
 
 body {
@@ -255,6 +257,11 @@ a:hover {
   color: var(--color-light);
 }
 
+
+.title-big {
+  font-size: clamp(24px, 3.12vw, 60px);
+}
+
 .button {
     display: inline-flex;
     align-items: center;
@@ -283,6 +290,7 @@ a:hover {
   padding-right: 80px;
   background-color: transparent;
   border: var(--border);
+  color: var(--color-light)
 }
 
 .button.transparent:hover {
@@ -299,6 +307,30 @@ a:hover {
   background: url('./icons/arrow-top-right.svg') center/70% no-repeat;
   border: var(--border);
   border-radius: 50%;
+}
+
+.input {
+  width: 100%;
+  height: var(--input-height);
+  padding-inline: 25px;
+  background-color: transparent;
+  border: 1px solid var(--color-dark-gray);
+  border-radius: var(--border-radius);
+  color: var(--color-light);
+}
+
+.input::placeholder {
+  color: var(--color-light-gray);
+}
+
+.input:hover {
+  border-color: var(--color-light);
+}
+
+.input:focus {
+  color: var(--color-dark);
+  background-color: var(--color-light-gray);
+  outline: none;
 }
 
 .header {
@@ -515,6 +547,8 @@ transition-duration: var(--transition-duration);
   translate: -50% 0;
 }
 
+
+
 .motivation-card-description {
   max-width: 400px;
 }
@@ -553,6 +587,128 @@ transition-duration: var(--transition-duration);
   font-size: 16px;
 }
 
+
+
+/* НАЧАЛО СЕКЦИИ JOIN US */
+
+.join-us {
+  background-color: var(--color-dark-alternate);
+}
+
+.join-us-video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 150px 30px;
+  background: url('./images/join-us-bg.jpg') center/cover no-repeat var(--color-dark-alternate);
+}
+
+.join-us-video {
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+}
+
+.join-us-video-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 200px;
+  aspect-ratio: 1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4px;
+
+  border-radius: 50%;
+  border: var(--border);
+  background-color: transparent;
+  
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-light);
+}
+
+.join-us-video-play-button::after {
+  content: '';
+  width: 25px;
+  aspect-ratio: 1;
+  background: url('./icons/join-us-video-arrow.svg') center/contain no-repeat;
+}
+
+.join-us-video-play-button:hover {
+  border: 1px solid var(--color-dark-gray);
+  color: var(--color-dark);
+  transition-duration: var(--transition-duration);
+background-color: var(--color-light-gray);
+}
+
+.join-us-video-play-button:hover::after {
+  filter: invert(1);
+  transition-duration: var(--transition-duration);
+
+}
+
+.join-us-body {
+  padding-bottom: 150px;
+}
+
+.join-us-title {
+  position: relative;
+  font-size: clamp(64px, 9.37vw, 180px);
+  line-height: 1;
+  text-align: center;
+  margin-top: -0.45em;
+}
+
+.join-us-title::after {
+  content: '';
+  height: 0.7em;
+  aspect-ratio: 1;
+  display: inline-block;
+  background: url('./icons/bold-arrow-down-right.svg') center/contain no-repeat;
+  scale: 1 -1;
+  margin-left: 0.14em;
+}
+
+.join-us-title:not(:last-child) {
+  margin-bottom: 130px;
+}
+
+.join-us-form-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 7px;
+}
+
+.join-us-form-header:not(:last-child) {
+  margin-bottom: 52px;
+}
+
+.join-us-form-subtitle {
+  font-size: 20px;
+  line-height: 1.65;
+  text-transform: uppercase;
+  color: var(--color-light);
+  text-align: center;
+}
+
+.join-us-form-input {
+  max-width: 400px;
+}
+
+.join-us-form-body {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+/* КОНЕЦ СЕКЦИИ JOING US */
+
 @media (max-width: 1024px) {
     .header {
       row-gap: 10px;
@@ -588,6 +744,14 @@ transition-duration: var(--transition-duration);
 
     .training-types-list {
       grid-template-columns: repeat(3, 1fr);
+    }
+
+    .join-us-body {
+      padding-bottom: 80px;
+    }
+
+    .join-us-title:not(:last-child) {
+      margin-bottom: 80px;
     }
 
 }
@@ -665,7 +829,25 @@ transition-duration: var(--transition-duration);
     }
 
       .training-types-image {
-        max-width: 120px;
+        width: 120px;
+        aspect-ratio: 1;
       }
 
+      .join-us-video-play-button {
+        width: 140px;
+      }
+
+      .join-us-title:not(:last-child) {
+        margin-bottom: 40px;
+      }
+      
+      .join-us-form-subtitle {
+        font-size: 16px;
+      }
+
+      .join-us-form-body {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
 }
