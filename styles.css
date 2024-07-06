@@ -224,6 +224,11 @@ margin-bottom: 24px;
     padding-inline: var(--container-padding-x);
 }
 
+.container-wide {
+  max-width: 1920px;
+  margin-inline: auto;
+}
+
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
@@ -557,6 +562,8 @@ transition-duration: var(--transition-duration);
   margin-bottom: 37px;
 }
 
+
+
 .training-types {
   position: relative;
   max-width: 1920px;
@@ -709,6 +716,38 @@ background-color: var(--color-light-gray);
 
 /* КОНЕЦ СЕКЦИИ JOING US */
 
+/* НАЧАЛО СЕКЦИИ LOCATION */
+
+.location {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.location-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px;
+}
+
+.location-title:not(:last-child) {
+  margin-bottom: 14px;
+}
+
+.location-description:not(:last-child) {
+  margin-bottom: 37px;
+}
+
+.location-description {
+  max-width: 490px;
+}
+
+.location-map-image {
+  height: auto;
+}
+
 @media (max-width: 1024px) {
     .header {
       row-gap: 10px;
@@ -752,6 +791,11 @@ background-color: var(--color-light-gray);
 
     .join-us-title:not(:last-child) {
       margin-bottom: 80px;
+    }
+
+    .location {
+      display: flex;
+      flex-direction: column-reverse;
     }
 
 }
@@ -850,4 +894,13 @@ background-color: var(--color-light-gray);
         align-items: center;
         gap: 15px;
       }
+
+      .location-body {
+        padding: 40px;
+      }
+
+      .location-description {
+        margin-bottom: 20px;
+      }
+
 }
