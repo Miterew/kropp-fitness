@@ -151,18 +151,12 @@ body {
   line-height: 1.5;
 }
 
-/**
-  Приводим к единому цвету svg-элементы
- */
-svg *[fill] { fill: currentColor }
+/* svg *[fill] { fill: currentColor }
 svg *[stroke] { stroke: currentColor }
 
-/**
-  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
- */
 svg * {
   transition-property: fill, stroke;
-}
+} */
 
 /**
   Удаляем все анимации и переходы для людей,
@@ -208,7 +202,6 @@ body {
     background-color: var(--color-dark);
     color: var(--color-light-gray);
 }
-
 
 p {
   margin-block: 0;
@@ -946,6 +939,10 @@ background-color: var(--color-light-gray);
   margin-bottom: 60px;
 }
 
+.footer-logo-image {
+  height: auto;
+}
+
 .footer-body {
   grid-template-columns: var(--footerLogoWidth) repeat(3, 1fr);
 }
@@ -981,8 +978,59 @@ background-color: var(--color-light-gray);
   scale: -1 1;
 }
 
-/* ОСТАНОВИЛСЯ НА 46:25
-https://youtu.be/OFX-5MRlaPI?t=2785 */
+.footer-subscribe {
+  position: relative;
+}
+
+.footer-subscribe:not(:last-child){
+  margin-bottom: 50px;
+}
+
+.footer-subscribe-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  aspect-ratio: 1;
+  border: var(--border);
+  border-color: var(--color-dark-gray);
+  border-radius: 50%;
+  background-color: transparent;
+  background: url('./icons/arrow-top-right.svg') center/70% no-repeat;
+}
+
+.footer-subscribe-button:hover {
+  background-color: var(--color-light-gray);
+}
+
+.footer-subscribe-input {
+  padding-right: 70px;
+}
+
+.footer-soc1als-list {
+  display: flex;
+  column-gap: 18px;
+}
+
+
+.footer-soc1als-link {
+  display: flex;
+  width: 23px;
+
+}
+
+.footer-socials-link svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-light-gray);
+  transition: color 0.3s;
+  fill: currentColor;
+}
+
+
+.footer-copyright {
+  font-size: 14px;
+}
 
 @media (max-width: 1024px) {
     .header {
@@ -1071,6 +1119,24 @@ https://youtu.be/OFX-5MRlaPI?t=2785 */
     .calculate-table tfoot td {
       padding-top: 10px;
     }
+
+    .footer-main {
+      padding-top: 80px;
+      padding-bottom: 50px;
+    }
+
+    .footer-header {
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+    }
+
+    .footer-body {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 30px;
+    }
+
+
 }
 
 @media (max-width: 804px) {
@@ -1192,5 +1258,21 @@ https://youtu.be/OFX-5MRlaPI?t=2785 */
 
       .calculate {
         padding-block: 60px;
+      }
+
+      .footer-body {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-main {
+        padding-top: 50px;
+      }
+
+      .footer-header:not(:last-child) {
+        margin-bottom: 30px;
+      }
+
+      .footer-subscribe {
+        margin-bottom: 40px;
       }
 }
